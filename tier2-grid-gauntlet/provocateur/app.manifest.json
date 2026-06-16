@@ -1,0 +1,25 @@
+{
+  "AppId": "grid-gauntlet-provocateur",
+  "Name": "Grid Gauntlet Provocateur",
+  "Version": "1.0.0",
+  "Description": "Controlled adversary MAS for testing grid defense mechanisms. Executes 5 attack scenarios after a 10s startup delay.",
+  "Services": [
+    {
+      "MasId": "grid-gauntlet-provocateur-mas",
+      "DisplayName": "Grid Gauntlet Provocateur MAS",
+      "Mode": "CellSingleton",
+      "Runtime": "Python",
+      "PythonConfig": {
+        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier2-grid-gauntlet\\provocateur\\app.py",
+        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier2-grid-gauntlet\\provocateur",
+        "ManagedVenvName": "aurarouter"
+      },
+      "Remoting": {
+        "EnableGrpc": false,
+        "EnableOpenApi": true
+      },
+      "RestartPolicy": "OnFailure",
+      "MaxRestartAttempts": 3
+    }
+  ]
+}

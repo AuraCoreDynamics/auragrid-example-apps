@@ -1,0 +1,25 @@
+{
+  "AppId": "grid-gauntlet-sentinel",
+  "Name": "Grid Gauntlet Sentinel",
+  "Version": "1.0.0",
+  "Description": "Defensive MAS that validates grid infrastructure invariants. Monitors fencing tokens, event ordering, lease health, and tattle defense.",
+  "Services": [
+    {
+      "MasId": "grid-gauntlet-sentinel-mas",
+      "DisplayName": "Grid Gauntlet Sentinel MAS",
+      "Mode": "CellSingleton",
+      "Runtime": "Python",
+      "PythonConfig": {
+        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier2-grid-gauntlet\\sentinel\\app.py",
+        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier2-grid-gauntlet\\sentinel",
+        "ManagedVenvName": "aurarouter"
+      },
+      "Remoting": {
+        "EnableGrpc": false,
+        "EnableOpenApi": true
+      },
+      "RestartPolicy": "OnFailure",
+      "MaxRestartAttempts": 3
+    }
+  ]
+}

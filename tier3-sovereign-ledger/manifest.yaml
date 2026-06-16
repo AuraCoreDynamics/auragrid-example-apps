@@ -1,0 +1,10 @@
+id: sovereign-ledger
+name: Sovereign Ledger
+version: 1.0.0
+entrypoint: python ledger.py
+runtime: python3
+capabilities:
+  - storage-write
+  - singleton-lease
+env:
+  PYTHONPATH: "."

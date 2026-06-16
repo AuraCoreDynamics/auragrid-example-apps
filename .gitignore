@@ -1,0 +1,32 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.stackdump
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# .NET artifacts
+bin/
+obj/
+*.user
+*.suo
+*.sln.docstates
+
+# System files
+.DS_Store
+Thumbs.db
+
+# AuraGrid specific
+*.agp
+staging/
+C:/GridRoot/

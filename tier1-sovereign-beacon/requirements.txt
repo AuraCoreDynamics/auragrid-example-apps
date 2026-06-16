@@ -1,0 +1,9 @@
+# sovereign-beacon runtime dependencies
+# All packages listed here are pre-installed in the 'aurarouter' managed venv.
+# Listing them here is for documentation; the grid will not re-install if
+# ManagedVenvName points to an existing venv that satisfies these.
+#
+# Dependency Authorization (BLACK.md §5):
+# - auragrid: AuraGrid Python SDK — authorized, no-license-restriction, internal package
+# No third-party PyPI packages are required for this Tier 1 MAS.
+auragrid

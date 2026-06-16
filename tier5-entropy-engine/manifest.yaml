@@ -1,0 +1,16 @@
+id: entropy-engine
+name: Entropy Engine
+version: 1.0.0
+description: Fault injection and chaos engineering MAS.
+entrypoint: python entropy.py
+runtime: python3
+mode: Distributed
+capabilities:
+  - chaos-control  # Note: Requires 'system-service' role in grid governance
+  - service-discovery
+  - storage-write
+env:
+  PYTHONPATH: "."
+dependencies:
+  pip:
+    - psutil>=5.9.0
