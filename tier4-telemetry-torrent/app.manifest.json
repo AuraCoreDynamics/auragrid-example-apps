@@ -1,0 +1,24 @@
+{
+  "AppId": "tier4-telemetry-torrent",
+  "Name": "Tier 4: Telemetry Torrent",
+  "Version": "1.0.0",
+  "Description": "Bidirectional gRPC streaming stress-test. The TorrentWorker accepts unbuffered telemetry chunks and yields ACKs immediately.",
+  "Services": [
+    {
+      "masId": "tier4-telemetry-torrent-worker",
+      "displayName": "Telemetry Torrent Worker",
+      "mode": "CellSingleton",
+      "runtime": "PowerShell",
+      "powerShellConfig": {
+        "scriptPath": "C:\\projects\\auracore\\app-examples\\tier4-telemetry-torrent\\launch-worker.ps1",
+        "workingDirectory": "C:\\projects\\auracore\\app-examples\\tier4-telemetry-torrent\\src\\TorrentWorker"
+      },
+      "remoting": {
+        "enableGrpc": true,
+        "enableOpenApi": false
+      },
+      "restartPolicy": "OnFailure",
+      "maxRestartAttempts": 3
+    }
+  ]
+}

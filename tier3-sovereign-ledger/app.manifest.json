@@ -1,0 +1,42 @@
+{
+  "AppId": "tier3-sovereign-ledger",
+  "Name": "Tier 3: Sovereign Ledger",
+  "Version": "1.0.0",
+  "Description": "Multi-MAS Python application demonstrating an immutable audit ledger with a separate auditor service.",
+  "Services": [
+    {
+      "MasId": "tier3-ledger-mas",
+      "DisplayName": "Ledger MAS",
+      "Mode": "CellSingleton",
+      "Runtime": "Python",
+      "PythonConfig": {
+        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier3-sovereign-ledger\\ledger.py",
+        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier3-sovereign-ledger",
+        "ManagedVenvName": "aurarouter"
+      },
+      "Remoting": {
+        "EnableGrpc": false,
+        "EnableOpenApi": true
+      },
+      "RestartPolicy": "OnFailure",
+      "MaxRestartAttempts": 3
+    },
+    {
+      "MasId": "tier3-auditor-mas",
+      "DisplayName": "Auditor MAS",
+      "Mode": "CellSingleton",
+      "Runtime": "Python",
+      "PythonConfig": {
+        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier3-sovereign-ledger\\auditor.py",
+        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier3-sovereign-ledger",
+        "ManagedVenvName": "aurarouter"
+      },
+      "Remoting": {
+        "EnableGrpc": false,
+        "EnableOpenApi": true
+      },
+      "RestartPolicy": "OnFailure",
+      "MaxRestartAttempts": 3
+    }
+  ]
+}

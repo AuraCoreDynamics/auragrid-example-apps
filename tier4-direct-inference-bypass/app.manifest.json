@@ -1,0 +1,40 @@
+{
+  "AppId": "tier4-direct-inference-bypass",
+  "Name": "Tier 4: Direct Inference Bypass",
+  "Version": "1.0.0",
+  "Description": "gRPC unary inference routing demo. OrchestratorMas resolves WorkerMas via the Grid IPC registry and routes directly through YARP using the bypass fast-path.",
+  "Services": [
+    {
+      "masId": "tier4-inference-worker",
+      "displayName": "Inference Worker MAS",
+      "mode": "CellSingleton",
+      "runtime": "PowerShell",
+      "powerShellConfig": {
+        "scriptPath": "C:\\projects\\auracore\\app-examples\\tier4-direct-inference-bypass\\launch-worker.ps1",
+        "workingDirectory": "C:\\projects\\auracore\\app-examples\\tier4-direct-inference-bypass\\src\\WorkerMas"
+      },
+      "remoting": {
+        "enableGrpc": true,
+        "enableOpenApi": false
+      },
+      "restartPolicy": "OnFailure",
+      "maxRestartAttempts": 3
+    },
+    {
+      "masId": "tier4-inference-orchestrator",
+      "displayName": "Inference Orchestrator MAS",
+      "mode": "CellSingleton",
+      "runtime": "PowerShell",
+      "powerShellConfig": {
+        "scriptPath": "C:\\projects\\auracore\\app-examples\\tier4-direct-inference-bypass\\launch-orchestrator.ps1",
+        "workingDirectory": "C:\\projects\\auracore\\app-examples\\tier4-direct-inference-bypass\\src\\OrchestratorMas"
+      },
+      "remoting": {
+        "enableGrpc": false,
+        "enableOpenApi": true
+      },
+      "restartPolicy": "OnFailure",
+      "maxRestartAttempts": 3
+    }
+  ]
+}

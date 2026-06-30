@@ -1,0 +1,25 @@
+{
+  "AppId": "tier4-model-foundry",
+  "Name": "Tier 4: Model Foundry",
+  "Version": "1.0.0",
+  "Description": "Python MAS demonstrating model artifact registration, versioning, and retrieval through the AuraGrid catalog.",
+  "Services": [
+    {
+      "MasId": "tier4-model-foundry-mas",
+      "DisplayName": "Model Foundry MAS",
+      "Mode": "CellSingleton",
+      "Runtime": "Python",
+      "PythonConfig": {
+        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier4-model-foundry\\foundry.py",
+        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier4-model-foundry",
+        "ManagedVenvName": "aurarouter"
+      },
+      "Remoting": {
+        "EnableGrpc": false,
+        "EnableOpenApi": true
+      },
+      "RestartPolicy": "OnFailure",
+      "MaxRestartAttempts": 3
+    }
+  ]
+}

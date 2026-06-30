@@ -1,0 +1,25 @@
+{
+  "AppId": "tier4-cognitive-beacon",
+  "Name": "Tier 4: Cognitive Beacon",
+  "Version": "1.0.0",
+  "Description": "AI-inference Python MAS demonstrating LLM-backed inference routing through the AuraGrid proxy.",
+  "Services": [
+    {
+      "MasId": "tier4-cognitive-beacon-mas",
+      "DisplayName": "Cognitive Beacon MAS",
+      "Mode": "CellSingleton",
+      "Runtime": "Python",
+      "PythonConfig": {
+        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier4-cognitive-beacon\\beacon.py",
+        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier4-cognitive-beacon",
+        "ManagedVenvName": "aurarouter"
+      },
+      "Remoting": {
+        "EnableGrpc": false,
+        "EnableOpenApi": true
+      },
+      "RestartPolicy": "OnFailure",
+      "MaxRestartAttempts": 3
+    }
+  ]
+}

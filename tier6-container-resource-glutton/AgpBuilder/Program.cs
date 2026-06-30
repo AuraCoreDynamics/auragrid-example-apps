@@ -4,6 +4,7 @@ using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 using AuraGrid.Abstractions.Configuration;
+using AuraGrid.Abstractions.Deployment;
 using AuraGrid.ProxyWorker.Deployment;
 using AuraGrid.ProxyWorker.Deployment.Packaging;
 using Microsoft.Extensions.Logging.Abstractions;

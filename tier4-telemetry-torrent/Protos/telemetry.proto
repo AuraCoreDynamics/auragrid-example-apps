@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package auracore.examples.telemetry;
+
+// Option to specify the namespace for the generated C# code
+option csharp_namespace = "AuraCore.Examples.Telemetry";
+
+service TelemetryService {
+  // Streams data chunks from the client to the server and receives acks
+  rpc StreamData(stream DataChunk) returns (stream Ack);
+}
+
+message DataChunk {
+  int32 chunk_id = 1;
+  bytes payload = 2;
+}
+
+message Ack {
+  int32 chunk_id = 1;
+  bool success = 2;
+}

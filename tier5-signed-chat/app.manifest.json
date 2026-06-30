@@ -1,0 +1,25 @@
+{
+  "AppId": "tier5-signed-chat",
+  "Name": "Tier 5: Signed Chat",
+  "Version": "1.0.0",
+  "Description": "Python MAS demonstrating PKI-signed message exchange, where every chat message carries a node certificate signature verifiable by all participants.",
+  "Services": [
+    {
+      "MasId": "tier5-signed-chat-mas",
+      "DisplayName": "Signed Chat MAS",
+      "Mode": "CellSingleton",
+      "Runtime": "Python",
+      "PythonConfig": {
+        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier5-signed-chat\\chat.py",
+        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier5-signed-chat",
+        "ManagedVenvName": "aurarouter"
+      },
+      "Remoting": {
+        "EnableGrpc": false,
+        "EnableOpenApi": true
+      },
+      "RestartPolicy": "OnFailure",
+      "MaxRestartAttempts": 3
+    }
+  ]
+}

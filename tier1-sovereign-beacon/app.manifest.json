@@ -1,0 +1,25 @@
+{
+  "AppId": "tier1-sovereign-beacon",
+  "Name": "Tier 1: Sovereign Beacon",
+  "Version": "1.0.0",
+  "Description": "Foundational Python MAS demonstrating AuraGrid sovereign node registration and heartbeat eventing.",
+  "Services": [
+    {
+      "MasId": "tier1-sovereign-beacon-mas",
+      "DisplayName": "Sovereign Beacon MAS",
+      "Mode": "CellSingleton",
+      "Runtime": "Python",
+      "PythonConfig": {
+        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier1-sovereign-beacon\\app.py",
+        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier1-sovereign-beacon",
+        "ManagedVenvName": "aurarouter"
+      },
+      "Remoting": {
+        "EnableGrpc": false,
+        "EnableOpenApi": true
+      },
+      "RestartPolicy": "OnFailure",
+      "MaxRestartAttempts": 3
+    }
+  ]
+}
