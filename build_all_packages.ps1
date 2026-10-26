@@ -1,10 +1,11 @@
-$manifestsDir = "C:\tmp\grid-smoke-test\wal\manifests"
+$baseDir = $PSScriptRoot
+$manifestsDir = if ($env:AURAGRID_MANIFESTS_DIR) { $env:AURAGRID_MANIFESTS_DIR } else { Path.Combine($env:TEMP, "grid-manifests") }
 if (!(Test-Path $manifestsDir)) { New-Item -ItemType Directory -Force -Path $manifestsDir | Out-Null }
 
 function Publish-PythonApp {
     param($AppDir)
     
-    $manifestPath = "C:\projects\auracore\app-examples\$AppDir\app.manifest.json"
+    $manifestPath = "$baseDir\$AppDir\app.manifest.json"
     if (Test-Path $manifestPath) {
         $json = Get-Content $manifestPath | ConvertFrom-Json
         $appId = $json.AppId
@@ -69,16 +70,16 @@ Publish-PythonApp "tier5-entropy-engine"
 Publish-PythonApp "tier5-signed-chat"
 
 # 2. Publish C# Apps
-Publish-CSharpApp "tier4-direct-inference-bypass" "Direct Inference Worker" "C:\projects\auracore\app-examples\tier4-direct-inference-bypass\src\WorkerMas\bin\Debug\net10.0" "WorkerMas.exe"
-Publish-CSharpApp "tier4-telemetry-torrent" "Telemetry Torrent Worker" "C:\projects\auracore\app-examples\tier4-telemetry-torrent\src\TorrentWorker\bin\Debug\net10.0" "TorrentWorker.exe"
+Publish-CSharpApp "tier4-direct-inference-bypass" "Direct Inference Worker" "$baseDir\tier4-direct-inference-bypass\src\WorkerMas\bin\Debug\net10.0" "WorkerMas.exe"
+Publish-CSharpApp "tier4-telemetry-torrent" "Telemetry Torrent Worker" "$baseDir\tier4-telemetry-torrent\src\TorrentWorker\bin\Debug\net10.0" "TorrentWorker.exe"
 
 # 3. Publish Go App (Tier 6) using its AgpBuilder
 Write-Host "Publishing Tier 6 App..."
-Set-Location "C:\projects\auracore\app-examples\tier6-container-resource-glutton\AgpBuilder"
+Set-Location "$baseDir\tier6-container-resource-glutton\AgpBuilder"
 dotnet run
 # AgpBuilder writes tier6-container-resource-glutton-1.0.0.agp to tier6-container-resource-glutton folder
 # It also creates an unzipped manifest in its staging folder. We can just copy the staging manifest
-$t6Staging = "C:\projects\auracore\app-examples\tier6-container-resource-glutton\AgpBuilder\staging\app.manifest.json"
+$t6Staging = "$baseDir\tier6-container-resource-glutton\AgpBuilder\staging\app.manifest.json"
 if (Test-Path $t6Staging) {
     $t6Dest = "$manifestsDir\tier6-container-resource-glutton\1.0.0"
     if (!(Test-Path $t6Dest)) { New-Item -ItemType Directory -Force -Path $t6Dest | Out-Null }

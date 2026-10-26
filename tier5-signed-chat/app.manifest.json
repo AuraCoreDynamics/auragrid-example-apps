@@ -10,8 +10,8 @@
       "Mode": "CellSingleton",
       "Runtime": "Python",
       "PythonConfig": {
-        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier5-signed-chat\\chat.py",
-        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier5-signed-chat",
+        "ScriptPath": "chat.py",
+        "WorkingDirectory": ".",
         "ManagedVenvName": "aurarouter"
       },
       "Remoting": {

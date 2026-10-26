@@ -10,8 +10,8 @@
       "Mode": "CellSingleton",
       "Runtime": "Python",
       "PythonConfig": {
-        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier4-model-foundry\\foundry.py",
-        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier4-model-foundry",
+        "ScriptPath": "foundry.py",
+        "WorkingDirectory": ".",
         "ManagedVenvName": "aurarouter"
       },
       "Remoting": {

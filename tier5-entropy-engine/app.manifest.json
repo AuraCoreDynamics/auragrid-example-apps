@@ -10,8 +10,8 @@
       "Mode": "CellSingleton",
       "Runtime": "Python",
       "PythonConfig": {
-        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier5-entropy-engine\\entropy.py",
-        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier5-entropy-engine",
+        "ScriptPath": "entropy.py",
+        "WorkingDirectory": ".",
         "ManagedVenvName": "aurarouter"
       },
       "Remoting": {

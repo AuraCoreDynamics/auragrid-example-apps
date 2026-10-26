@@ -10,8 +10,8 @@
       "Mode": "CellSingleton",
       "Runtime": "Python",
       "PythonConfig": {
-        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier2-grid-gauntlet\\sentinel\\app.py",
-        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier2-grid-gauntlet\\sentinel",
+        "ScriptPath": "app.py",
+        "WorkingDirectory": ".",
         "ManagedVenvName": "aurarouter"
       },
       "Remoting": {

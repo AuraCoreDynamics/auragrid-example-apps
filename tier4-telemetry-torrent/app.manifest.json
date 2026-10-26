@@ -10,8 +10,8 @@
       "mode": "CellSingleton",
       "runtime": "PowerShell",
       "powerShellConfig": {
-        "scriptPath": "C:\\projects\\auracore\\app-examples\\tier4-telemetry-torrent\\launch-worker.ps1",
-        "workingDirectory": "C:\\projects\\auracore\\app-examples\\tier4-telemetry-torrent\\src\\TorrentWorker"
+        "scriptPath": "launch-worker.ps1",
+        "workingDirectory": "src/TorrentWorker"
       },
       "remoting": {
         "enableGrpc": true,

@@ -10,8 +10,8 @@
       "Mode": "CellSingleton",
       "Runtime": "Python",
       "PythonConfig": {
-        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier3-sovereign-ledger\\ledger.py",
-        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier3-sovereign-ledger",
+        "ScriptPath": "ledger.py",
+        "WorkingDirectory": ".",
         "ManagedVenvName": "aurarouter"
       },
       "Remoting": {
@@ -27,8 +27,8 @@
       "Mode": "CellSingleton",
       "Runtime": "Python",
       "PythonConfig": {
-        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier3-sovereign-ledger\\auditor.py",
-        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier3-sovereign-ledger",
+        "ScriptPath": "auditor.py",
+        "WorkingDirectory": ".",
         "ManagedVenvName": "aurarouter"
       },
       "Remoting": {

@@ -10,8 +10,8 @@
       "mode": "CellSingleton",
       "runtime": "PowerShell",
       "powerShellConfig": {
-        "scriptPath": "C:\\projects\\auracore\\app-examples\\tier4-direct-inference-bypass\\launch-worker.ps1",
-        "workingDirectory": "C:\\projects\\auracore\\app-examples\\tier4-direct-inference-bypass\\src\\WorkerMas"
+        "scriptPath": "launch-worker.ps1",
+        "workingDirectory": "src/WorkerMas"
       },
       "remoting": {
         "enableGrpc": true,
@@ -26,8 +26,8 @@
       "mode": "CellSingleton",
       "runtime": "PowerShell",
       "powerShellConfig": {
-        "scriptPath": "C:\\projects\\auracore\\app-examples\\tier4-direct-inference-bypass\\launch-orchestrator.ps1",
-        "workingDirectory": "C:\\projects\\auracore\\app-examples\\tier4-direct-inference-bypass\\src\\OrchestratorMas"
+        "scriptPath": "launch-orchestrator.ps1",
+        "workingDirectory": "src/OrchestratorMas"
       },
       "remoting": {
         "enableGrpc": false,

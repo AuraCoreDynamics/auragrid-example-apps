@@ -10,8 +10,8 @@
       "Mode": "CellSingleton",
       "Runtime": "Python",
       "PythonConfig": {
-        "ScriptPath": "C:\\projects\\auracore\\app-examples\\tier1-sovereign-beacon\\app.py",
-        "WorkingDirectory": "C:\\projects\\auracore\\app-examples\\tier1-sovereign-beacon",
+        "ScriptPath": "app.py",
+        "WorkingDirectory": ".",
         "ManagedVenvName": "aurarouter"
       },
       "Remoting": {
