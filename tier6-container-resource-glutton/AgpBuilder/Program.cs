@@ -56,7 +56,12 @@ namespace AgpBuilder
             if (Directory.Exists(stagingDir)) Directory.Delete(stagingDir, true);
             Directory.CreateDirectory(stagingDir);
 
-            var options = new JsonSerializerOptions { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
+            };
             var json = JsonSerializer.Serialize(manifest, options);
             
             var manifestPath = Path.Combine(stagingDir, "app.manifest.json");

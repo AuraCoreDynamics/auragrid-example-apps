@@ -1,5 +1,5 @@
 $baseDir = $PSScriptRoot
-$manifestsDir = if ($env:AURAGRID_MANIFESTS_DIR) { $env:AURAGRID_MANIFESTS_DIR } else { Path.Combine($env:TEMP, "grid-manifests") }
+$manifestsDir = if ($env:AURAGRID_MANIFESTS_DIR) { $env:AURAGRID_MANIFESTS_DIR } else { [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), "grid-manifests") }
 if (!(Test-Path $manifestsDir)) { New-Item -ItemType Directory -Force -Path $manifestsDir | Out-Null }
 
 function Publish-PythonApp {
@@ -8,8 +8,8 @@ function Publish-PythonApp {
     $manifestPath = "$baseDir\$AppDir\app.manifest.json"
     if (Test-Path $manifestPath) {
         $json = Get-Content $manifestPath | ConvertFrom-Json
-        $appId = $json.AppId
-        $version = $json.Version
+        $appId = if ($json.AppId) { $json.AppId } else { $json.appId }
+        $version = if ($json.Version) { $json.Version } else { $json.version }
         $dest = "$manifestsDir\$appId\$version"
         if (!(Test-Path $dest)) { New-Item -ItemType Directory -Force -Path $dest | Out-Null }
         Copy-Item $manifestPath "$dest\app.manifest.json"
