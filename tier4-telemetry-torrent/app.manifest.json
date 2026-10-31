@@ -1,7 +1,7 @@
 {
   "AppId": "tier4-telemetry-torrent",
   "Name": "Tier 4: Telemetry Torrent",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "Description": "Bidirectional gRPC streaming stress-test. The TorrentWorker accepts unbuffered telemetry chunks and yields ACKs immediately.",
   "Services": [
     {

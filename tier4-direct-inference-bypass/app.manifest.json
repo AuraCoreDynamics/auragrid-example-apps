@@ -1,7 +1,7 @@
 {
   "AppId": "tier4-direct-inference-bypass",
   "Name": "Tier 4: Direct Inference Bypass",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "Description": "gRPC unary inference routing demo. OrchestratorMas resolves WorkerMas via the Grid IPC registry and routes directly through YARP using the bypass fast-path.",
   "Services": [
     {

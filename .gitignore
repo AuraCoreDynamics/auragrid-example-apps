@@ -16,13 +16,22 @@ venv/
 ENV/
 
 # .NET artifacts
-bin/
-obj/
+[Bb]in/
+[Oo]bj/
+**/bin/
+**/obj/
 *.user
 *.suo
 *.sln.docstates
+TestResults/
+*.trx
+*.log
+logs/
 
-# System files
+# System & IDE files
+.vs/
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
 
