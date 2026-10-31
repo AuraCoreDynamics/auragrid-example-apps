@@ -26,6 +26,17 @@ class Program
 {
     static async Task Main(string[] args)
     {
+        // Check if running in pure managed MAS mode (AuraGrid Node remoting & proxy)
+        if (args.Any(a => a.Equals("--managed", StringComparison.OrdinalIgnoreCase)) ||
+            Environment.GetEnvironmentVariable("AURAGRID_MANAGED") == "1")
+        {
+            var hostBuilder = Host.CreateApplicationBuilder(args);
+            hostBuilder.Services.AddGrpc();
+            var host = hostBuilder.Build();
+            await host.RunAsync();
+            return;
+        }
+
         var builder = WebApplication.CreateBuilder(args);
         builder.WebHost.ConfigureKestrel(options =>
         {
@@ -88,7 +99,8 @@ class Program
                             methods = new[] { "Infer" }
                         };
 
-                        var endpoint = $"http://127.0.0.1:{ipcPort}/cell/service-port";
+                        var ipcBase = Environment.GetEnvironmentVariable("AURAGRID_IPC_URL") ?? $"http://{System.Net.IPAddress.Loopback}:{ipcPort}";
+                        var endpoint = $"{ipcBase.TrimEnd('/')}/cell/service-port";
                         using var response = await client.PostAsJsonAsync(endpoint, payload);
                         response.EnsureSuccessStatusCode();
                         Console.WriteLine("Successfully registered with Grid IPC.");
